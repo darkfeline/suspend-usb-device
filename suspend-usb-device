@@ -160,8 +160,8 @@ else
 
     # check if CONFIG_USB_SUSPEND is enabled
     [[ $VERBOSE == 1 ]] && echo "Checking whether $DEVICE can be suspended"
-    POWER_LEVEL_FILE=/sys${DEVICE}/power/level
-    if [ ! -f "$POWER_LEVEL_FILE" ]; then
+    POWER_DIR=/sys${DEVICE}/power
+    if [ ! -f "$POWER_DIR/level" ]; then
         1>&2 cat<<EOF
 It's safe to remove the USB device now but better can be done. The
 power level control file $POWER_LEVEL_FILE
@@ -176,6 +176,7 @@ EOF
         exit 3
     fi
 
-    [[ $VERBOSE == 1 ]] && echo "Suspending $DEVICE by writing to $POWER_LEVEL_FILE"
-    echo 'suspend' > "$POWER_LEVEL_FILE"
+    [[ $VERBOSE == 1 ]] && echo "Suspending $DEVICE by writing to $POWER_DIR/level"
+    echo '0' > "$POWER_DIR/autosuspend"
+    echo 'auto' > "$POWER_DIR/level"
 fi
