@@ -1,5 +1,7 @@
 #!/bin/bash
 #
+#  Copyright (C) 2012,2014 Allen Li <darkfeline@felesatra.moe>
+#
 #  suspend-usb-device: an easy-to-use script to properly put an USB
 #  device into suspend mode that can then be unplugged safely
 #
@@ -30,7 +32,7 @@
 usage()
 {
     cat<<EOF
-suspend-usb-device  Copyright (C) 2009  Yan Li <elliot.li.tech@gmail.com>
+suspend-usb-device
 
 This script is designed to properly put an USB device into suspend
 mode that can then be unplugged safely. It sends a SYNCHRONIZE CACHE

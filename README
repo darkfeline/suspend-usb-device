@@ -1,0 +1,4 @@
+suspend-usb-device
+==================
+
+Script for safely powering down and removing USB devices on Linux.
