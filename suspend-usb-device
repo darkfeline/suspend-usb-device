@@ -179,7 +179,6 @@ EOF
     fi
 
     [[ $VERBOSE == 1 ]] && echo "Suspending $DEVICE by writing to $POWER_DIR/level"
-    echo '0' > "$POWER_DIR/autosuspend"
     echo '0' > "$POWER_DIR/autosuspend_delay_ms"
-    echo 'auto' > "$POWER_DIR/level"
+    echo 'auto' > "$POWER_DIR/control"
 fi
